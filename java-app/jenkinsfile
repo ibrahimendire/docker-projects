@@ -4,9 +4,14 @@ pipeline {
   stages {
     
 
-   stage('Build and Test') {
+        stage('Test') {
             steps {
-                sh './mvn clean install'
+                sh 'mvn test'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn clean install'
             }
         }
 
